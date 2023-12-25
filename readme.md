@@ -39,3 +39,12 @@ This instruction requires you to run the program using you `database` account by
     localhost:8000
     ```
     Now you see the login page that allows your to login or create a new account.
+
+## Enjoy PuGiFy
+![Large Screen Mode](screenshot/pc_mode.png)
+![Small Screen Mode](screenshot/mobile_mode.jpeg)
+![Login Page](screenshot/login.jpeg)
+![Create Account](screenshot/create_account.jpeg)
+![Sort Posts Options](screenshot/sort_posts.jpeg)
+
+Enjoy 😘
