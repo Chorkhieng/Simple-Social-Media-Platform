@@ -1,0 +1,357 @@
+body {
+    background-color: #1e1e21;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 50px;
+}
+
+header {
+    background-color: #1d2d90;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    padding: 0;
+    width: 100%;
+    top: 0;
+}
+
+#news_feed_link, .current_user_link {
+    background-color: #a1a4b4;
+    color: #22232b;
+    padding: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    margin: 12px;
+}
+
+#news_feed_link:hover, .current_user_link:hover {
+    background-color: #1f34ad;
+    color: #999baa;
+    padding: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    margin: 12px;
+}
+
+#log-out {
+    background-color: #a1a4b4;
+    color: #22232b;
+    padding: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    margin: 12px;
+}
+
+#log-out:hover {
+    background-color: #1f34ad;
+    color: #999baa;
+    padding: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    margin: 12px;
+}
+
+#dark-light {
+    background-color: #a1a4b4;
+    color: #22232b;
+    padding: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    margin: 12px;
+}
+
+#dark-light:hover {
+    background-color: #1f34ad;
+    color: #999baa;
+    padding: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    margin: 12px;
+}
+
+.media_name {
+    background-color: #3c6109;
+    padding: 5px;
+    color: #a7a6b9;
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 600;
+    font-family: monospace;
+    margin: auto;
+}
+
+#left_menu {
+    position: fixed;
+    padding: 20px;
+    background-color: #4524a9;
+    width: 25%;
+    align-items: center;
+}
+
+.logo {
+    background-color: #a1a4b4;
+    color: #333;
+    width: 9%;
+    border-radius: 90px;
+}
+
+form#add-posts {
+    margin-bottom: 20px;
+}
+
+table#news_feed {
+    margin-left: 30%;
+    border-collapse: collapse;
+    min-width: 65%;
+    margin-bottom: 50px;
+}
+
+tr.posted_section {
+    border: 5px;
+    border-style: solid;
+    background-color: #9d9524;
+    border-color: #22232b;
+}
+
+td {
+    padding: 10px;
+    width: fit-content;
+}
+
+.posted-text {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgb(197, 201, 193);
+    min-height: 60px;
+    word-wrap: break-word;
+}
+
+.comment-text {
+    margin: 5px;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    column-gap: 10px;
+    background-color: #bdc759;
+    width: fit-content;
+}
+
+button {
+    margin-right: 10px;
+    background-color: #a1a4b4;
+    border: 2px;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+button:hover {
+    margin-right: 10px;
+    background-color: #212b5f;
+    color: #cac7ce;
+    border: 2px;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#comment-button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+  
+#login-nav {
+    background-color: #f0f0f0;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+.login-create {
+    background-color: rgb(132, 118, 101);
+    padding: 10px;
+    width: fit-content;
+    border: 10px;
+    border-radius: 2px;
+    margin-left: -5%;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.like_count {
+    padding: 2px;
+    background-color: #7f9f61;
+    width: fit-content;
+    border: 2px;
+    border-radius: 2px;
+}
+
+/* User profile page */
+.user_profile {
+    background-color: #adb2c7;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile_name {
+    background-color: #1d2d90;
+    color:rgb(118, 131, 59);
+    padding: 50px;
+    border: 20px;
+    border-style: double;
+    border-radius: 100px;
+    border-color: #7f832f;
+    margin: 0 auto;
+    width: fit-content;
+    text-decoration: solid;
+    font-size: xx-large;
+}
+
+/* user link */
+.user_links {
+    background-color: #4f5894;
+    padding: 10px;
+    margin: 20px;
+}
+
+/* for poster on news feed */
+.poster_profile_name {
+    background-color: #a1a4b4;
+    padding: 3px;
+    color: #333;
+    border: 1px;
+    border-radius: 10px;
+    border-color: blueviolet;
+    border-style: double;
+    font-size: large;
+    font-weight: 600;
+    font-family: monospace;
+    width: fit-content;
+}
+
+.poster-name-date {
+    display: flex;
+    gap: 20px;
+}
+
+.commenter_profile_name {
+    background-color: #a1a4b4;
+    padding: 2px;
+    color: #333;
+    border: 1px;
+    border-radius: 10px;
+    border-color: blueviolet;
+    border-style: double;
+    font-size: medium;
+    font-weight: 100;
+    font-family: monospace;
+    width: fit-content;
+}
+
+.edit-textarea{
+    width: 75%;
+    min-height: 50px;
+}
+
+.comment {
+    min-width: 70%;
+    margin: 10px;
+}
+
+.pagination  {
+    background-color: #7f832f;
+    padding: 5px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.pagination a, span {
+    background-color: #389897;
+    padding: 5px;
+    border: 10px;
+    border-radius: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #24309e;
+    padding: 5px;
+    border: 10px;
+    border-radius: 10px;
+    color: #b2bcc3;
+    text-decoration: none;
+}
+
+.more-users {
+    max-height: 100px;
+    overflow: auto;
+}
+
+h2, h4 {
+    background-color: #83b730;
+    color: #080814;
+    padding: 10px;
+    margin: 5px;
+}
+
+input {
+    margin: 5px;
+}
+
+@media screen and (max-width: 650px) {
+
+    body {
+        background-color: #2e2f35;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding-top: 50px;
+    }
+
+    #left_menu {
+        position: relative;
+        width: 90%;
+        padding: 20px;
+        background-color: #1d9b9d;
+        align-items: center;
+        column-count:auto;
+        margin: 0 auto;
+        column-count: 2;
+        column-gap: 10px;
+    }
+
+    table#news_feed {
+        width: 100%;
+        margin: 0;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+    }
+
+    /* user link */
+    .user_links {
+        background-color: #366f9b;
+        width: fit-content;
+        padding: 10px;
+    }
+
+    #add-posts, .options {
+        background-color: #478c80;
+        padding: 5px;
+        width: fit-content;
+        margin: 5px;
+    }
+
+    .more-users, h2, h4 {
+        display: none;
+    }
+
+}

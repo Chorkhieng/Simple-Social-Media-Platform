@@ -1,0 +1,21 @@
+include html_template
+    title Login Page
+body 
+    include media_header
+    div#login-nav
+        h1 PuGiFy
+        img(class="logo" src="/images/pug_logo.png" alt="Pug Picture")
+        form(id="login-form" actioin="/login" method="POST")
+            br
+            label(for="username") Username:
+            input(type="text" name="username" id="username")
+            br
+            label(for="password") Password:
+            input(type="password" name="password" id="password")
+            br
+            button(type="submit") Login
+        p Don't have an account yet?
+        p Create a new account with your new username and password below:
+        a(class="login-create" href="/create") Create
+div.pagination
+    div Chork @ 2023. All rights reserved.

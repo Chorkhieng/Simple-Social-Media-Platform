@@ -1,0 +1,14 @@
+include html_template
+    title User Profile 
+body 
+    include media_header
+        a(href="/" id="news_feed_link") News Feed
+        a(href="/logout" id="log-out") Log out
+    div.user_profile
+        if currentUser
+            h1.profile_name= currentUser
+        hr
+        div.profile_description
+            h3 Nothing to show here.
+div.pagination
+    div Chork @ 2023. All rights reserved.

@@ -1,0 +1,79 @@
+include html_template
+    title Media Page
+body 
+    include media_header
+        a(href="/" id="news_feed_link") News Feed
+        a(href="/logout" id="log-out") Log out
+        a(href="/profile" class="current_user_link") My Profile
+    div#left_menu
+        h1=`Hi ${currentUser}!`
+            
+        form(id="add-posts" action="/posts/add" method="POST")
+            textarea(class="post" name="post" placeholder="Want to say something?" maxlength="2000" required)
+            button(id="post-button" type="submit") Post
+        form(class="options" actioin="/update" method="PUT")
+            p Sort by:
+                select(name="choice" id="choice")
+                    option(value="") Select
+                    option(value="post_time") Most Recent
+                    option(value="like_count") Most Liked
+                button(type="submit") Apply
+        h2 Other Users
+        div.more-users
+            each user of allUsers 
+                if user.user_id != currentUserId 
+                    h4= user.account_name
+        
+    table#news_feed
+        each post of posts 
+            //- poster_id-post_id
+            //- div(class="posted-section" id=`${post.poster_id}-${post.post_id}`)
+            if post
+                tr(class="posted_section" id=`${post.poster_id}-${post.post_id}-${currentUserId}`)
+                    td
+                        each user of allUsers
+                            if user.user_id == post.poster_id
+                                div.poster-name-date
+                                    p.poster_profile_name= user.account_name
+                                    p= `${post.post_time.toDateString()} at ${post.post_time.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}`
+                                hr
+                        p(class="posted-text" id=`posted-text-${post.poster_id}-${post.post_id}-${currentUserId}`)= post.posted_content
+                        if post.poster_id == currentUserId
+                            form(class=`edit-post-text-${post.poster_id}-${post.post_id}-${currentUserId}` action="/posts/edit" method="POST" id=`edit-form-${post.poster_id}-${post.post_id}-${currentUserId}` style="display: none;")
+                                textarea(name="new_post_text" required class="edit-textarea")= post.posted_content
+                                //- hidden data for tracking who commented on each post
+                                input(type="hidden" name="id" value=`${post.poster_id}-${post.post_id}-${currentUserId}`)
+                                button(type="submit") Apply
+                        each comment of comments 
+                            if comment
+                                    each user of allUsers 
+                                        if user.user_id == comment.commenter_id && post.post_id == comment.post_id
+                                            div.comment-text
+                                                p.commenter_profile_name= user.account_name
+                                                if comment.post_id == post.post_id
+                                                    p(class="commented-text")= comment.comment_content
+                        if post.like_count <= 0
+                            p(id=`like_count-${post.poster_id}-${post.post_id}-${currentUserId}` class="like_count")= '0 like'
+                        if post.like_count == 1
+                            p(id=`like_count-${post.poster_id}-${post.post_id}-${currentUserId}` class="like_count")= `1 like`
+                        if post.like_count > 1
+                            p(id=`like_count-${post.poster_id}-${post.post_id}-${currentUserId}` class="like_count")= `${post.like_count} likes`  
+                        
+                        //- poster_id-post_id-currentUserId(liker_id)
+                        button(class="like-button" id=`${post.poster_id}-${post.post_id}-${currentUserId}`) Like
+                        if post.poster_id === currentUserId
+                            button(id=`${currentUserId}-${post.post_id}` class="delete-button") Delete
+                            button(id=`${currentUserId}-${post.post_id}` class="edit-button") Edit
+                        button(id=`${currentUserId}-${post.post_id}` class="comment-button") Comment
+                        form(class=`comment-text-form-${post.poster_id}-${post.post_id}-${currentUserId}` action="/posts/comment" method="POST" id=`comment-form-${post.poster_id}-${post.post_id}-${currentUserId}` style="display: none;")
+                            textarea(class="comment" name="comment" placeholder="Add your comment" required)
+                            //- hidden data for tracking who commented on each post
+                            input(type="hidden" name="id" value=`${post.poster_id}-${post.post_id}-${currentUserId}`)
+                            button(id="comment-button" type="submit") Send
+    div.pagination
+        if page >= 2
+            a(href="/?page="+(page-1)) Previous Page
+        span= `Viewing Page ${page}`
+        if posts.length === 10
+            a(href="/?page="+(page+1)) Next Page
+        div Chork @ 2023. All rights reserved.

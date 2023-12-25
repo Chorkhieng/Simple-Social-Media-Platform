@@ -1,0 +1,23 @@
+include html_template
+    title Create Account Page
+body 
+    include media_header
+    div#login-nav
+        h1 PuGiFy
+        img(class="logo" src="/images/pug_logo.png" alt="Pug Picture")
+        p Create a new account with your new username and password below:  
+        form(id="create-form" actioin="/create" method="POST")
+            label(for="account_name") Account Name:
+            input(type="text" name="account_name" id="account_name")
+            br
+            label(for="create_username") Username:
+            input(type="text" name="create_username" id="create_username")
+            br
+            label(for="create_password") Password:
+            input(type="password" name="create_password" id="create_password")
+            br
+            button(type="submit") Create account
+        p Return to login
+        a(class="login-create" href="/login") Login
+div.pagination
+    div Chork @ 2023. All rights reserved.
