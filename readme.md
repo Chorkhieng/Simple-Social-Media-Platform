@@ -41,10 +41,15 @@ This instruction requires you to run the program using you `database` account by
     Now you see the login page that allows your to login or create a new account.
 
 ## Enjoy PuGiFy
+Large Screen Mode
 ![Large Screen Mode](screenshot/pc_mode.png)
+Small Screen Mode
 ![Small Screen Mode](screenshot/mobile_mode.jpeg)
+Login Page
 ![Login Page](screenshot/login.jpeg)
+Account Creation Page
 ![Create Account](screenshot/create_account.jpeg)
+See Posts by Options (latest or most liked)
 ![Sort Posts Options](screenshot/sort_posts.jpeg)
 
 Enjoy 😘
