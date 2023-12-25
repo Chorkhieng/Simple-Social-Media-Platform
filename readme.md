@@ -1,4 +1,4 @@
-# Final-Project
+# PuGiFy Connect
 This is a simple social media platform
 ## Some functionalities for this website
 ### Login and account creation features
