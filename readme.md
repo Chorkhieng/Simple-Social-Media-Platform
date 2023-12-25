@@ -36,6 +36,6 @@ This instruction requires you to run the program using you `database` account by
     This will run the `server` for the website
 - On your browser, go to the following site:
     ```
-    localhost:4131
+    localhost:8000
     ```
     Now you see the login page that allows your to login or create a new account.
