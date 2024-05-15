@@ -9,7 +9,7 @@ const port = 4131;
 app.set("views", "templates");
 app.set("view engine", "pug");
 
-app.use(session({secret:'sfsdfsdfkoisjldfa;;oijeofiaoijaopweijfodijasojeofwieje'}));
+app.use(session({secret: process.env.SECRET_SESSION}));
 app.use(express.static('resources'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
