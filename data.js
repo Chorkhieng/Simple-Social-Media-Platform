@@ -11,8 +11,7 @@ var connPool = mysql.createPool({
     host: "127.0.0.1",// this will work
     user: process.env.DATABASE,
     database: process.env.DATABASE,
-    password: process.env.PASSWORD, // we really shouldn't be saving this here long-term
-    // -- and I probably shouldn't be sharing it with you...
+    password: process.env.PASSWORD,
 });
 
 // get all users in the users table
